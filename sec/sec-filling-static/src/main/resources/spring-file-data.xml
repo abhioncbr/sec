@@ -1,0 +1,101 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+	http://www.springframework.org/schema/batch/spring-batch-4.0.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<bean id="cikCompanyInfo" class="org.springframework.batch.item.file.FlatFileItemWriter">
+		<property name="resource" value="file:${file.csv.output.folder}/DowJones35-CIK-Company-Info.csv" />
+		<property name="appendAllowed" value="false" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="lineAggregator">
+			<bean
+				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter">
+					<util:constant
+						static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_COMMA" />
+				</property>
+				<property name="fieldExtractor">
+					<bean
+						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+						<property name="names"
+							value="cik,cw_id,company_name,irs_number,sic_code,industry_name,sic_sector,sector_name,source_type,raw_address,country_code,subdiv_code,top_parent_id,num_parents,num_children,max_year,min_year" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="secFilingInfo" class="org.springframework.batch.item.file.FlatFileItemWriter">
+		<property name="resource" value="file:${file.csv.output.folder}/DowJones35-CIK-Filing-Info.csv" />
+		<property name="appendAllowed" value="false" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="lineAggregator">
+			<bean
+				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter">
+					<util:constant
+						static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_COMMA" />
+				</property>
+				<property name="fieldExtractor">
+					<bean
+						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+						<property name="names"
+							value="cik,cw_id,year,quarter,period_of_report,filing_date,form_10K_url,sec_21_url,company_is_filer" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="parseStatFileWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
+		<property name="resource" value="file:${file.csv.output.folder}/Parse-Stat.csv" />
+		<property name="appendAllowed" value="false" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="lineAggregator">
+			<bean
+				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter">
+					<util:constant
+						static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_COMMA" />
+				</property>
+				<property name="fieldExtractor">
+					<bean
+						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+						<property name="names"
+							value="fileName,rawFileSize,binaryIgnoredFileSize,cleanFileSize,item7tocDeduced,item8tocDeduced,mdaExtracted,extractionRule,linesInExtractedData" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="downloadStatFileWriter" class="org.springframework.batch.item.file.FlatFileItemWriter">
+		<property name="resource" value="file:${file.csv.output.folder}/Download-Stat.csv" />
+		<property name="appendAllowed" value="false" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="lineAggregator">
+			<bean
+				class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+				<property name="delimiter">
+					<util:constant
+						static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_COMMA" />
+				</property>
+				<property name="fieldExtractor">
+					<bean
+						class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+						<property name="names"
+							value="fileName,filePath,downloaded" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>		
+	
+	<bean id="excelDataWriter" class="com.capiq.sec.filling.analysis.output.ExcelWriter">
+		<property name="fileName" value="${file.excel.output.folder}/SEC-CIK-DATA" />
+	</bean>
+</beans>	

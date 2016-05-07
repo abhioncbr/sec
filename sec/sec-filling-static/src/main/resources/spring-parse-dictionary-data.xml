@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+	http://www.springframework.org/schema/batch/spring-batch-4.0.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+	
+	<bean id="ruleExcelMapper" class="com.capiq.sec.filling.analysis.parse.ParseRuleExcelDataMapper" scope="singleton"/>
+	<bean id="parseRuleReader" class="com.capiq.sec.filling.analysis.input.ExcelReader">
+		<constructor-arg> <value>com.capiq.sec.filling.analysis.parse.ParseRule</value> </constructor-arg>
+		<constructor-arg> <ref bean="ruleExcelMapper"/> </constructor-arg>
+		<property name="resource"><value>classpath:Sec-Parse-Dictionary.xlsx</value></property>
+	</bean>
+
+
+	<bean id="financialDictionaryMapper" class="com.capiq.sec.filling.analysis.parse.FinancialDictionaryExcelDataMapper" scope="singleton"/>
+	<bean id="financialDictionaryReader" class="com.capiq.sec.filling.analysis.input.ExcelReader">
+		<constructor-arg> <value>com.capiq.sec.filling.analysis.parse.FinancialDictionary</value> </constructor-arg>
+		<constructor-arg> <ref bean="financialDictionaryMapper"/> </constructor-arg>
+		<property name="resource"><value>classpath:Sec-Financial-Dictionary.xlsx</value></property>
+	</bean>
+</beans>	
