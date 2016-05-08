@@ -3,7 +3,7 @@
   <artifactId>sec-filling-static</artifactId>
   
   <parent>
-	<groupId>com.sandp.capiq</groupId>
+	<groupId>com.sec.analysis</groupId>
 	<artifactId>sec-filling-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
   </parent>

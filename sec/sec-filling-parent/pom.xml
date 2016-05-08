@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sandp.capiq</groupId>
+	<groupId>com.sec.analysis</groupId>
 	<artifactId>sec-filling-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -13,7 +13,7 @@
 	<developers>
 		<developer>
 			<name>Abhishek Sharma</name>
-			<email>abhisheksharma2@spcapitaliq.com</email>
+			<email>abhioncbr@yahoo.com</email>
 			<roles>
 				<role>Developer</role>
 			</roles>
@@ -23,7 +23,7 @@
 
 	<properties>
 <!-- General Properties  -->
-		<copy.location>/home/abhishek/Desktop/sec/try/</copy.location>
+		<copy.location>/home/abhi/projects/sec</copy.location>
 		<project.build.directory>target</project.build.directory>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
@@ -75,35 +75,6 @@
 		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
 	</properties>
 
-<!-- Maven Internal Repository Configuration -->
-	<repositories>
-		<repository>
-			<id>artifactory</id>
-			<name>S and P artifactory server</name>
-			<url>http://nj09mhf5479.mhf.mhc:8081/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<id>artifactory-snapshot</id>
-			<name>S and P artifactory server</name>
-			<url>http://nj09mhf5479.mhf.mhc:8081/artifactory/libs-snapshot</url>
-		</repository>
-	</repositories>
-
-<!-- Plugin Repository Configuration -->
-	<pluginRepositories>
-		<pluginRepository>
-			<id>artifactory</id>
-			<name>S and P artifactory server</name>
-			<url>http://nj09mhf5479.mhf.mhc:8081/artifactory/libs-release</url>
-		</pluginRepository>
-
-		<pluginRepository>
-			<id>artifactory-snapshot</id>
-			<name>S and P artifactory server</name>
-			<url>http://nj09mhf5479.mhf.mhc:8081/artifactory/libs-snapshot</url>
-		</pluginRepository>
-	</pluginRepositories>
-	
 	<profiles>
 		<profile>
 			<id>IDE</id>
@@ -121,9 +92,9 @@
 	</profiles>
 	
 	<modules>
-		<module>../../sec-filling-static/sec-filling-static</module>
-		<module>../../sec-filling-analysis/sec-filling-analysis</module>
-		<module>../../sec-filling-spark/sec-filling-spark</module>
+		<module>../sec-filling-static</module>
+		<module>../sec-filling-analysis</module>
+		<module>../sec-filling-spark</module>
 	</modules>	
 
 <!-- Common Dependency -->

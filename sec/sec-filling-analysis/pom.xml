@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 	
 	<parent>
-		<groupId>com.sandp.capiq</groupId>
+		<groupId>com.sec.analysis</groupId>
 		<artifactId>sec-filling-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -82,7 +82,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.sandp.capiq</groupId>
+			<groupId>com.sec.analysis</groupId>
 			<artifactId>sec-filling-static</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>

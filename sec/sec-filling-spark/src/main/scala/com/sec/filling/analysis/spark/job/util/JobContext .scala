@@ -14,7 +14,7 @@ import scala.sys.SystemProperties
 import java.util.concurrent.ConcurrentHashMap
 import com.sec.filling.analysis.spark.job.domain.DomainDef
 import com.sec.filling.analysis.spark.job.util.AppConf
-import com.capiq.sec.filling.common.util.PropertiesUtil
+import com.sec.filing.analysis.common.util.PropertiesUtil
 import org.apache.spark.sql.SaveMode
 
 object JobContext  {

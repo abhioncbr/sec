@@ -1,4 +1,4 @@
-package com.capiq.sec.filling.analysis.parse.jflex;
+package com.sec.filing.analysis.parse.jflex;
 
 @SuppressWarnings({"unused"})
 %%

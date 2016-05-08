@@ -3,15 +3,15 @@ package com.sec.filling.analysis.spark.job
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
-import com.capiq.sec.filling.analysis.launch.multithread.SparkJobExecutor
-import com.capiq.sec.filling.common.util.SpringAppContext
+import com.sec.filing.analysis.launch.multithread.SparkJobExecutor
+import com.sec.filing.analysis.common.util.SpringAppContext
 import scala.reflect.ClassTag
-import com.capiq.sec.filling.analysis.parse.stat.MdaExtractionStatData
+import com.sec.filing.analysis.parse.stat.MdaExtractionStatData
 import com.sec.filling.analysis.spark.job.domain.ExtractionStat
 import scala.collection.mutable.MutableList
 import org.apache.spark.sql.SaveMode
 import com.sec.filling.analysis.spark.job.domain.DomainDef
-import com.capiq.sec.filling.analysis.input.FileInput
+import com.sec.filing.analysis.input.FileInput
 
 object SecExtractorSparkJob {
   
@@ -31,8 +31,8 @@ object SecExtractorSparkJob {
     JobContext.stop(jobContext)
   }
   
-  def evaluate[MdaExtractionStatData:ClassTag](rdd: RDD[String]): MutableList[com.capiq.sec.filling.analysis.parse.stat.MdaExtractionStatData] = {
-    val list = MutableList[com.capiq.sec.filling.analysis.parse.stat.MdaExtractionStatData]();
+  def evaluate[MdaExtractionStatData:ClassTag](rdd: RDD[String]): MutableList[com.sec.filing.analysis.parse.stat.MdaExtractionStatData] = {
+    val list = MutableList[com.sec.filing.analysis.parse.stat.MdaExtractionStatData]();
     rdd.collect().foreach(a => { val b = execute(a); list += b })
     return list
   } 

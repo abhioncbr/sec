@@ -1,0 +1,5 @@
+/target-ide/
+/.settings/
+/target/
+/.classpath
+/.project
