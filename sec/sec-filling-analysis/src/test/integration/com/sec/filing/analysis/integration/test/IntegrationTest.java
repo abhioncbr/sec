@@ -1,4 +1,4 @@
-package com.capiq.sec.filling.analysis.integration.test;
+package com.sec.filing.analysis.integration.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -10,20 +10,20 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.capiq.sec.filling.analysis.exception.SymantecAnalysisGeneralException;
-import com.capiq.sec.filling.analysis.http.SecDocHttpClient;
-import com.capiq.sec.filling.analysis.input.FileInput;
-import com.capiq.sec.filling.analysis.launch.multithread.IProcessExecutor;
-import com.capiq.sec.filling.analysis.launch.multithread.MultithreadExecutor;
-import com.capiq.sec.filling.analysis.launch.multithread.SecFileDownloader;
-import com.capiq.sec.filling.analysis.launch.multithread.SecFileParser;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocument;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocumentContext;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocumentContextEnum;
-import com.capiq.sec.filling.analysis.parse.document.dataStructure.SecDocument;
-import com.capiq.sec.filling.analysis.regex.SecFilingRegeRule;
-import com.capiq.sec.filling.common.util.PropertiesUtil;
-import com.capiq.sec.filling.common.util.SpringAppContext;
+import com.sec.filing.analysis.common.util.PropertiesUtil;
+import com.sec.filing.analysis.common.util.SpringAppContext;
+import com.sec.filing.analysis.exception.SymantecAnalysisGeneralException;
+import com.sec.filing.analysis.http.SecDocHttpClient;
+import com.sec.filing.analysis.input.FileInput;
+import com.sec.filing.analysis.launch.multithread.IProcessExecutor;
+import com.sec.filing.analysis.launch.multithread.MultithreadExecutor;
+import com.sec.filing.analysis.launch.multithread.SecFileDownloader;
+import com.sec.filing.analysis.launch.multithread.SecFileParser;
+import com.sec.filing.analysis.parse.document.ParseDocument;
+import com.sec.filing.analysis.parse.document.ParseDocumentContext;
+import com.sec.filing.analysis.parse.document.ParseDocumentContextEnum;
+import com.sec.filing.analysis.parse.document.dataStructure.SecDocument;
+import com.sec.filing.analysis.regex.SecFilingRegeRule;
 
 public class IntegrationTest {
 	private static final String FORM_10K_INPUT_TEST_FILE = "/Form-10K-Data-Min.txt";
