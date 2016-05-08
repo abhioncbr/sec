@@ -1,4 +1,4 @@
-package com.capiq.sec.filling.analysis.test.parse;
+package com.sec.filing.analysis.test.parse;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -7,12 +7,12 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.capiq.sec.filling.analysis.exception.SymantecAnalysisGeneralException;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocumentContext;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocumentContextEnum;
-import com.capiq.sec.filling.analysis.parse.document.ParseDocument;
-import com.capiq.sec.filling.analysis.parse.document.dataStructure.SecDocument;
-import com.capiq.sec.filling.common.util.SpringAppContext;
+import com.sec.filing.analysis.common.util.SpringAppContext;
+import com.sec.filing.analysis.exception.SymantecAnalysisGeneralException;
+import com.sec.filing.analysis.parse.document.ParseDocument;
+import com.sec.filing.analysis.parse.document.ParseDocumentContext;
+import com.sec.filing.analysis.parse.document.ParseDocumentContextEnum;
+import com.sec.filing.analysis.parse.document.dataStructure.SecDocument;
 
 public class ParseDocumentTest {
 

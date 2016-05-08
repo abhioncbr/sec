@@ -1,4 +1,4 @@
-package com.capiq.sec.filling.analysis.test.parse.html;
+package com.sec.filing.analysis.test.parse.html;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -10,10 +10,10 @@ import org.jsoup.nodes.Document;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.capiq.sec.filling.analysis.exception.SymantecAnalysisGeneralException;
-import com.capiq.sec.filling.analysis.parse.util.ParseHtmlElementsUtil;
-import com.capiq.sec.filling.common.util.PropertiesUtil;
-import com.capiq.sec.filling.common.util.SpringAppContext;
+import com.sec.filing.analysis.common.util.PropertiesUtil;
+import com.sec.filing.analysis.common.util.SpringAppContext;
+import com.sec.filing.analysis.exception.SymantecAnalysisGeneralException;
+import com.sec.filing.analysis.parse.util.ParseHtmlElementsUtil;
 
 public class ParseHtmlTest {
 	

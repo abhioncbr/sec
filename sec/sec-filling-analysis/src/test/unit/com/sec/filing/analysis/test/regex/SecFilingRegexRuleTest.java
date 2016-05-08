@@ -1,12 +1,15 @@
-package com.capiq.sec.filling.analysis.test.regex;
+package com.sec.filing.analysis.test.regex;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.capiq.sec.filling.analysis.regex.SecFilingRegeRule;
-import com.capiq.sec.filling.common.util.SpringAppContext;
+import com.sec.filing.analysis.common.util.SpringAppContext;
+import com.sec.filing.analysis.regex.SecFilingRegeRule;
 
 public class SecFilingRegexRuleTest {
 	
